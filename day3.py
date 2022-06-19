@@ -6,6 +6,9 @@
 #  for <variable> in <iterable>:
 #        block of code
 
+from audioop import avg
+
+
 names = ['John', 'Bob', 'Mary', 'Jane', 'Jack', 'Joe']
 
 # print(names[0])
@@ -141,3 +144,45 @@ print(sum([6, 2, 3, 4, 5, 10, 11]))
 # take a list of numbers and find the sum of all the numbers
 # take a list of numbers and find the average of all the numbers
 # take a list of numbers and find the maximum number
+
+
+nums = [6, 2, 3, 4, 5, 10, 11, 12, 12, 50, 60, 60, 30]
+
+print(round(sum(nums)/len(nums), 3))
+
+# max function equivalent
+
+
+def getLargest(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+
+
+print(getLargest(nums))
+
+
+# check for duplicates in a list
+
+# generator function
+def checkDuplicates(nums):
+    for num in nums:
+        if nums.count(num) > 1:
+            yield num
+
+# sum function equivalent
+
+
+def total(nums):
+    total = 0
+    for num in nums:
+        total += num
+    return total
+
+
+print(list(checkDuplicates(nums)), list(filter(
+    lambda num: nums.count(num) > 1, nums)))
+
+print(total(nums), sum(nums))

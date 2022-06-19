@@ -2,6 +2,9 @@
 
 # get the length of the list
 
+from ast import operator
+
+
 fruits = ["apple", "banana", "cherry"]
 
 # print(len(fruits))
@@ -143,29 +146,64 @@ num1 //= 2
 # if condition:
 #  block of code
 
-age = int(input("How old are you? "))
+# age = int(input("How old are you? "))
 
-# if age >= 18:
-#     print("You are old enough to vote")
+# # if age >= 18:
+# #     print("You are old enough to vote")
+# # else:
+# #     print("You are not old enough to vote")
+
+
+# if age >= 18 and age <= 45:
+#     print("You are old enough to vote!")
+# elif age >= 46 and age < 65:
+#     print("You are old enough to vote but you not old enough to retire")
+# elif age >= 65:
+#     print("You can not vote anymore you should retire!")
 # else:
 #     print("You are not old enough to vote")
-
-
-if age >= 18 and age <= 45:
-    print("You are old enough to vote!")
-elif age >= 46 and age < 65:
-    print("You are old enough to vote but you not old enough to retire")
-elif age >= 65:
-    print("You can not vote anymore you should retire!")
-else:
-    print("You are not old enough to vote")
 
 # ask a user to enter a number
 #  check if the number is even or odd
 
-# as user enter  2 numbers
+# num = int(input("Enter a number: "))
+
+# if num % 2 == 0:
+#     print("The number is even")
+# else:
+#     print("The number is odd")
+
+# ask user enter  2 numbers
 # check the largest number
 
-# as a user enter 2 numbers
-# give them the option to add, subtract, multiply or divide them
+nums = input("Enter two numbers separated by space: ")
 
+nums = nums.split(" ")
+
+# print(max(nums) + " is the largest number")
+
+# print(min(nums) + " is the smallest number")
+
+# if nums[0] > nums[1]:
+#     print(nums[0] + " is the largest number")
+# else:
+#     print(nums[1] + " is the largest number")
+print('subtract \nmultiply\ndivide\nmodulus')
+
+operator = input("Enter what you want to perform: ")
+
+if operator == 'subtract':
+    print(int(nums[0]) - int(nums[1]))
+elif operator == 'multiply':
+    print(int(nums[0]) * int(nums[1]))
+elif operator == 'divide':
+    print(int(nums[0]) / int(nums[1]))
+elif operator == 'modulus':
+    print(int(nums[0]) % int(nums[1]))
+elif operator == 'add':
+    print(int(nums[0]) + int(nums[1]))
+else:
+    print("Invalid operator")
+
+# ask a user enter 2 numbers
+# give them the option to add, subtract, multiply or divide them
